@@ -1,0 +1,45 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+*.zip
+*.ZIP
+*.xlsx
+*.XLSX
+*.pdf
+*.PDF
+*.JPG
+*.jpg
+*.jpeg
+
+# Camera Folders
+/100CANON/
+/101CANON/
+/DCIM/
+
+# data and outputs
+/uploads/
+/results/
+/OUTPUT/
+/temp_results/
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+
+# types
+next-env.d.ts

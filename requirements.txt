@@ -1,0 +1,9 @@
+opencv-python-headless
+numpy
+Pillow
+openpyxl
+easyocr
+insightface
+onnxruntime
+openai
+pymupdf
