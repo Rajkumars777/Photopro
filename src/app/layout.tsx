@@ -19,6 +19,8 @@ export const metadata: Metadata = {
   keywords: ["photography", "school photos", "AI automation", "student framing"],
 };
 
+import { LanguageProvider } from "@/i18n/LanguageContext";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,7 +29,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${outfit.variable} ${inter.variable} dark`} id="main-html">
       <body className={`${outfit.className} w-full overflow-x-hidden antialiased`}>
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

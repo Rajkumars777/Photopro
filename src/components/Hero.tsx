@@ -4,16 +4,19 @@ import { Play, ChevronRight, ArrowDown, TrendingUp, Users, Zap } from "lucide-re
 import Image from "next/image";
 import { motion } from "framer-motion";
 import HeroFeatureBar from "./HeroFeatureBar";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 
 
 export default function Hero() {
+  const { dict } = useLanguage();
+
   const scrollToAutomation = () => {
     document.getElementById("automation-section")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <section className="relative w-full overflow-hidden">
+    <section className="relative w-full overflow-x-hidden pt-16 lg:pt-0">
       {/* Animated grid background */}
       <div className="absolute inset-0 bg-grid opacity-40 pointer-events-none" />
 
@@ -41,23 +44,21 @@ export default function Hero() {
             >
               <span className="badge badge-blue">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
-                AI-Powered Pipeline
+                {dict.hero.badge}
               </span>
             </motion.div>
 
             {/* Headline */}
             <h1 className="text-5xl md:text-6xl lg:text-[4.5rem] font-black text-foreground leading-[1.05] mb-6 tracking-tight xl:tracking-[-0.04em]">
-              Perfecting
+              {dict.hero.title1}
               <br />
-              <span className="gradient-text">Student Photo</span>
+              <span className="gradient-text">{dict.hero.title2}</span>
               <br />
-              Framing
+              {dict.hero.title3}
             </h1>
 
             <p className="text-base md:text-lg text-secondary max-w-lg mb-10 leading-relaxed font-medium">
-              A high-precision photography pipeline for schools — scale your
-              workflow with automated roster matching, AI-powered frame
-              generation, and batch exports.
+              {dict.hero.subtitle}
             </p>
 
             {/* CTA Buttons */}
@@ -69,7 +70,7 @@ export default function Hero() {
                 className="relative overflow-hidden group flex items-center gap-2.5 px-8 py-5 rounded-2xl bg-gradient-to-r from-blue-600 to-violet-600 text-white font-black text-base shadow-[0_20px_50px_-15px_rgba(59,130,246,0.5),0_10px_30px_-10px_rgba(139,92,246,0.3)] hover:shadow-[0_32px_70px_-15px_rgba(59,130,246,0.6)] transition-all cursor-pointer border border-white/10"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-                Launch Automation
+                {dict.hero.ctaPrimary}
                 <ChevronRight size={18} strokeWidth={3} />
               </motion.button>
 
@@ -81,7 +82,7 @@ export default function Hero() {
                 <span className="w-8 h-8 rounded-full bg-surface flex items-center justify-center group-hover:bg-blue-500/20 transition-all">
                   <Play size={12} fill="currentColor" className="ml-0.5 text-foreground" />
                 </span>
-                Watch Platform Demo
+                {dict.hero.ctaSecondary}
               </motion.button>
             </div>
 
