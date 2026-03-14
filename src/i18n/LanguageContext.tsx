@@ -15,8 +15,8 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   // Use a state that initially doesn't rely on localStorage for SSR,
-  // but we can hydrate it. Since it's a dashboard, defaulting to English is fine.
-  const [language, setLanguageState] = useState<Language>('en');
+  // but we can hydrate it. Defaulting to Japanese as requested.
+  const [language, setLanguageState] = useState<Language>('ja');
 
   useEffect(() => {
     // Hydrate language choice from standard local storage if available
