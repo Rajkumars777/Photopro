@@ -75,6 +75,16 @@ export default function Hero() {
               </motion.button>
 
               <motion.button
+                onClick={() => window.location.href = '/pipeline'}
+                whileHover={{ scale: 1.04, y: -4 }}
+                whileTap={{ scale: 0.97 }}
+                className="relative overflow-hidden group flex items-center gap-2.5 px-8 py-5 rounded-2xl bg-white/10 text-white font-black text-base shadow-xl hover:bg-white/20 transition-all cursor-pointer border border-white/20 backdrop-blur-md"
+              >
+                Deploy Pipeline
+                <Zap size={18} fill="currentColor" className="text-amber-400" />
+              </motion.button>
+
+              <motion.button
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
                 className="flex items-center gap-3 text-secondary font-bold hover:text-foreground transition-all px-5 py-4 rounded-2xl glass border border-border group text-sm cursor-pointer"
