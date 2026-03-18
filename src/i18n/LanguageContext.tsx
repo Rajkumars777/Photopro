@@ -14,21 +14,16 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  // Use a state that initially doesn't rely on localStorage for SSR,
-  // but we can hydrate it. Defaulting to Japanese as requested.
-  const [language, setLanguageState] = useState<Language>('ja');
+  // Defaulting to English.
+  const [language, setLanguageState] = useState<Language>('en');
 
   useEffect(() => {
     // Hydrate language choice from standard local storage if available
     const saved = localStorage.getItem('photopro-lang') as Language;
     if (saved === 'en' || saved === 'ja') {
       setLanguageState(saved);
-    } else {
-      // detect browser language
-      if (navigator.language.startsWith('ja')) {
-        setLanguageState('ja');
-      }
     }
+    // No explicit detection for ja anymore, default is en
   }, []);
 
   const setLanguage = (lang: Language) => {

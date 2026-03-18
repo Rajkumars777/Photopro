@@ -15,7 +15,7 @@ export const dictionaries = {
       title3: "Photo Framing",
       subtitle: "A high-precision AI photography pipeline for schools. Automate student roster matching, frame generation, and batch exports.",
       ctaPrimary: "Deploy Pipeline",
-      ctaSecondary: "View Documentation",
+      ctaSecondary: "Features",
     },
     features: {
       faceRec: {
@@ -100,7 +100,7 @@ export const dictionaries = {
       title3: "写真フレーミング",
       subtitle: "学校向けの高精度AI写真パイプライン。生徒名簿の照合、フレーム作成、一括エクスポートを自動化します。",
       ctaPrimary: "パイプラインのデプロイ",
-      ctaSecondary: "ドキュメントを見る",
+      ctaSecondary: "機能紹介",
     },
     features: {
       faceRec: {

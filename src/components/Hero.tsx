@@ -11,10 +11,6 @@ import { useLanguage } from "@/i18n/LanguageContext";
 export default function Hero() {
   const { dict } = useLanguage();
 
-  const scrollToAutomation = () => {
-    document.getElementById("automation-section")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section className="relative w-full overflow-x-hidden pt-16 lg:pt-0">
       {/* Animated grid background */}
@@ -64,7 +60,7 @@ export default function Hero() {
             {/* CTA Buttons */}
             <div className="flex flex-wrap items-center gap-4 mb-10">
               <motion.button
-                onClick={scrollToAutomation}
+                onClick={() => window.location.href = '/pipeline'}
                 whileHover={{ scale: 1.04, y: -4 }}
                 whileTap={{ scale: 0.97 }}
                 className="relative overflow-hidden group flex items-center gap-2.5 px-8 py-5 rounded-2xl bg-gradient-to-r from-blue-600 to-violet-600 text-white font-black text-base shadow-[0_20px_50px_-15px_rgba(59,130,246,0.5),0_10px_30px_-10px_rgba(139,92,246,0.3)] hover:shadow-[0_32px_70px_-15px_rgba(59,130,246,0.6)] transition-all cursor-pointer border border-white/10"
@@ -75,16 +71,7 @@ export default function Hero() {
               </motion.button>
 
               <motion.button
-                onClick={() => window.location.href = '/pipeline'}
-                whileHover={{ scale: 1.04, y: -4 }}
-                whileTap={{ scale: 0.97 }}
-                className="relative overflow-hidden group flex items-center gap-2.5 px-8 py-5 rounded-2xl bg-white/10 text-white font-black text-base shadow-xl hover:bg-white/20 transition-all cursor-pointer border border-white/20 backdrop-blur-md"
-              >
-                Deploy Pipeline
-                <Zap size={18} fill="currentColor" className="text-amber-400" />
-              </motion.button>
-
-              <motion.button
+                onClick={() => document.getElementById("automation-section")?.scrollIntoView({ behavior: "smooth" })}
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
                 className="flex items-center gap-3 text-secondary font-bold hover:text-foreground transition-all px-5 py-4 rounded-2xl glass border border-border group text-sm cursor-pointer"
